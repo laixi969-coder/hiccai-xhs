@@ -2,7 +2,7 @@
 
 小红书爆款运营 Skill，用于生成、改写、审核小红书标题、封面标题、Hook、图文笔记、短视频脚本、话题标签、评论引导、账号选题和内容策略。
 
-这个仓库里的核心文件是 [`xhs/SKILL.md`](xhs/SKILL.md)。它把「小红书网感」拆成可执行流程：先判断选题和人群，再设计标题、封面、Hook、正文、收藏点、评论区和搜索关键词。
+这个仓库里的核心文件是 [`hiccai-xhs/SKILL.md`](hiccai-xhs/SKILL.md)。它把「小红书网感」拆成可执行流程：先判断选题和人群，再设计标题、封面、Hook、正文、收藏点、评论区和搜索关键词。
 
 ## 适用场景
 
@@ -35,10 +35,10 @@ npx -y skills add laixi969-coder/hiccai-xhs -g --all
 
 #### 手动安装
 
-复制 `xhs` 目录到 Codex skills 目录：
+复制 `hiccai-xhs` 目录到 Codex skills 目录：
 
 ```bash
-cp -R xhs ~/.codex/skills/xhs
+cp -R hiccai-xhs ~/.codex/skills/hiccai-xhs
 ```
 
 #### 从 Release 安装
@@ -53,11 +53,11 @@ cp -R xhs ~/.codex/skills/xhs
 npx -y skills add laixi969-coder/hiccai-xhs -g --all
 ```
 
-手动安装的用户，重新复制 `xhs` 目录即可：
+手动安装的用户，重新复制 `hiccai-xhs` 目录即可：
 
 ```bash
-rm -rf ~/.codex/skills/xhs
-cp -R xhs ~/.codex/skills/xhs
+rm -rf ~/.codex/skills/hiccai-xhs
+cp -R hiccai-xhs ~/.codex/skills/hiccai-xhs
 ```
 
 ## 触发方式
@@ -65,7 +65,7 @@ cp -R xhs ~/.codex/skills/xhs
 安装后，在 Codex 里可以直接用类似提示触发：
 
 ```text
-用 xhs 帮我写一篇杭州咖啡馆探店笔记
+用 hiccai-xhs 帮我写一篇杭州咖啡馆探店笔记
 ```
 
 ```text
@@ -152,7 +152,7 @@ cp -R xhs ~/.codex/skills/xhs
 给我30个小红书标题，主题是「第一次去成都旅游别乱走」，要有避坑、嘴替、搜索和争议方向。
 ```
 
-更多测试样例见 [`xhs/test-prompts.json`](xhs/test-prompts.json)。
+更多测试样例见 [`hiccai-xhs/test-prompts.json`](hiccai-xhs/test-prompts.json)。
 
 ## 质量原则
 
@@ -188,7 +188,7 @@ cp -R xhs ~/.codex/skills/xhs
 
 ## 本地打包
 
-仓库内置一个轻量打包脚本，会把 `xhs/SKILL.md` 和 `xhs/test-prompts.json` 打成可上传的 skill zip：
+仓库内置一个轻量打包脚本，会把 `hiccai-xhs/SKILL.md` 和 `hiccai-xhs/test-prompts.json` 打成可上传的 skill zip：
 
 ```bash
 bash tools/build-skill.sh
@@ -214,7 +214,7 @@ dist/skills/hiccai-xhs-版本号.zip
 ├── results.tsv
 ├── tools
 │   └── build-skill.sh
-└── xhs
+└── hiccai-xhs
     ├── SKILL.md
     └── test-prompts.json
 ```

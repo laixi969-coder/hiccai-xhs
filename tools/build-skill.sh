@@ -17,8 +17,8 @@ mkdir -p "$OUT_DIR"
 STAGE_DIR="$(mktemp -d)"
 trap 'rm -rf "$STAGE_DIR"' EXIT
 
-cp "$ROOT_DIR/xhs/SKILL.md" "$STAGE_DIR/SKILL.md"
-cp "$ROOT_DIR/xhs/test-prompts.json" "$STAGE_DIR/test-prompts.json"
+cp "$ROOT_DIR/hiccai-xhs/SKILL.md" "$STAGE_DIR/SKILL.md"
+cp "$ROOT_DIR/hiccai-xhs/test-prompts.json" "$STAGE_DIR/test-prompts.json"
 
 python3 - "$STAGE_DIR" "$ARCHIVE" <<'PY'
 import os
