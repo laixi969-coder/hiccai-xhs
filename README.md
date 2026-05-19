@@ -4,8 +4,6 @@
 
 这个仓库里的核心文件是 [`xhs/SKILL.md`](xhs/SKILL.md)。它把「小红书网感」拆成可执行流程：先判断选题和人群，再设计标题、封面、Hook、正文、收藏点、评论区和搜索关键词。
 
-![Darwin Skill result card](xhs/result-card.png)
-
 ## 适用场景
 
 - 小红书标题库、封面标题、开头 Hook
@@ -116,8 +114,6 @@ cp -R xhs ~/.codex/skills/xhs
 ├── results.tsv
 └── xhs
     ├── SKILL.md
-    ├── result-card.html
-    ├── result-card.png
     └── test-prompts.json
 ```
 
