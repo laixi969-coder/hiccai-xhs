@@ -24,13 +24,42 @@
 - **爆款审核**：按选题、标题、封面、Hook、正文、收藏、评论、搜索打分。
 - **真实性边界**：素材不足时使用占位或提醒补充，不编造价格、地址、体验和效果。
 
-## 安装方式
+## 如何安装
+
+#### 通用安装方式
+
+```bash
+npx -y skills add laixi969-coder/hiccai-xhs -g --all
+```
+
+#### 手动安装
 
 复制 `xhs` 目录到 Codex skills 目录：
 
 ```bash
 cp -R xhs ~/.codex/skills/xhs
 ```
+
+#### 从 Release 安装
+
+如果你使用支持上传 skill zip 的工具，可以从 GitHub Releases 下载 `hiccai-xhs-版本号.zip`。zip 解压后根级是 `SKILL.md`。
+
+## 如何更新
+
+通过 `npx skills add` 安装的用户，重新运行一次同样的命令即可：
+
+```bash
+npx -y skills add laixi969-coder/hiccai-xhs -g --all
+```
+
+手动安装的用户，重新复制 `xhs` 目录即可：
+
+```bash
+rm -rf ~/.codex/skills/xhs
+cp -R xhs ~/.codex/skills/xhs
+```
+
+## 触发方式
 
 安装后，在 Codex 里可以直接用类似提示触发：
 
@@ -59,6 +88,54 @@ cp -R xhs ~/.codex/skills/xhs
 | 改稿、润色、优化 | 改稿模式 |
 | 选题、账号方向、内容规划 | 策略模式 |
 | 审核、打分、判断能不能爆 | 审核模式 |
+
+## 工作流地图
+
+```text
+素材/想法
+    ↓
+判断任务类型
+    ↓
+提炼目标人群和使用场景
+    ↓
+重构选题角度
+    ↓
+标题 / 封面 / Hook
+    ↓
+正文结构 + 收藏点 + 避坑判断
+    ↓
+评论引导 + 搜索关键词 + 标签
+    ↓
+发布前自检
+```
+
+### 内容局部优化
+
+```text
+标题无感 → 标题模式
+封面不抓人 → 封面模式
+开头太慢 → Hook 模式
+正文像广告 → 改稿模式
+不知道能不能发 → 审核模式
+只有粗糙素材 → 完整图文笔记
+```
+
+### 标题生成逻辑
+
+标题模式会标注每条标题的「公式/触发器」，避免只凭感觉生成。
+
+当前内置公式包括：
+
+- `XHS-T01`：人群 + 痛点 + 解决方案
+- `XHS-T02`：反差 + 结果
+- `XHS-T03`：情绪 + 场景
+- `XHS-T04`：提醒 + 避坑
+- `XHS-T05`：疑问 + 好奇
+- `XHS-T06`：真实体验 + 反转
+- `XHS-T07`：嘴替 + 共鸣
+- `XHS-T08`：搜索词 + 网感
+- `XHS-T09`：数字 + 收藏理由
+- `XHS-T10`：争议判断 + 适配人群
 
 ## 示例 Prompt
 
@@ -106,12 +183,34 @@ cp -R xhs ~/.codex/skills/xhs
 
 完整记录见 [`results.tsv`](results.tsv)。
 
+## 本地打包
+
+仓库内置一个轻量打包脚本，会把 `xhs/SKILL.md` 和 `xhs/test-prompts.json` 打成可上传的 skill zip：
+
+```bash
+bash tools/build-skill.sh
+```
+
+产物位置：
+
+```text
+dist/skills/hiccai-xhs-版本号.zip
+```
+
+版本号来自 [`VERSION`](VERSION)。推送 `v版本号` tag 时，GitHub Actions 会自动构建并发布 Release。
+
 ## 目录结构
 
 ```text
 .
 ├── README.md
+├── VERSION
+├── .github
+│   └── workflows
+│       └── release.yml
 ├── results.tsv
+├── tools
+│   └── build-skill.sh
 └── xhs
     ├── SKILL.md
     └── test-prompts.json
