@@ -3,3 +3,4 @@ timestamp	commit	skill	old_score	new_score	status	dimension	note	eval_mode
 2026-05-19T00:10	workspace	hiccai-xhs	74.5	91.0	keep	整体架构	重构为路由-判断-生成-自检流程，补充边界条件、输出模板、审核模式和测试prompts	dry_run
 2026-05-19T00:30	f13b605	hiccai-xhs	91.0	93.4	baseline	-	吸收dbskill后复审：结构更产品化，标题可追溯，但商业内容安全边界仍偏弱	dry_run
 2026-05-19T00:45	current	hiccai-xhs	93.4	95.2	keep	边界条件	补充证据分级、商业内容安全边界、高风险表达禁区、发布前核对和护肤类测试prompt	dry_run
+2026-05-19T01:10	workspace	hiccai-xhs	95.2	96.8	keep	整体架构	融合爆款内容操盘手版本，补强五力模型、选题重构、账号策略、发布策略和搜索决策链路	dry_run
