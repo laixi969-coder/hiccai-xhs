@@ -4,16 +4,8 @@
 
 ## 安装（Claude Code）
 
-需要有本仓库访问权限。在终端运行：
-
 ```bash
-bash <(git clone --depth 1 git@github.com:laixi969-coder/hiccai-xhs.git /tmp/hiccai-xhs-install 2>/dev/null && echo "cp -r /tmp/hiccai-xhs-install/hiccai-xhs ~/.claude/skills/hiccai-xhs && rm -rf /tmp/hiccai-xhs-install && echo '✓ 安装完成，重启 Claude Code 后输入 /hiccai-xhs 使用'")
-```
-
-或直接运行 install.sh：
-
-```bash
-git clone git@github.com:laixi969-coder/hiccai-xhs.git /tmp/hiccai-xhs-install && bash /tmp/hiccai-xhs-install/install.sh
+curl -fsSL https://raw.githubusercontent.com/laixi969-coder/hiccai-xhs/main/install.sh | bash
 ```
 
 安装完成后重启 Claude Code，输入 `/hiccai-xhs` 即可使用。
@@ -47,18 +39,16 @@ git clone git@github.com:laixi969-coder/hiccai-xhs.git /tmp/hiccai-xhs-install &
 
 ## 如何安装
 
-需要有本仓库访问权限（SSH 或 HTTPS）。
-
 ```bash
-git clone git@github.com:laixi969-coder/hiccai-xhs.git /tmp/hiccai-xhs-install && bash /tmp/hiccai-xhs-install/install.sh
+curl -fsSL https://raw.githubusercontent.com/laixi969-coder/hiccai-xhs/main/install.sh | bash
 ```
 
 ## 如何更新
 
-重新运行安装命令即可，会自动覆盖旧版：
+重新运行同一条命令即可，自动覆盖旧版：
 
 ```bash
-git clone git@github.com:laixi969-coder/hiccai-xhs.git /tmp/hiccai-xhs-install && bash /tmp/hiccai-xhs-install/install.sh
+curl -fsSL https://raw.githubusercontent.com/laixi969-coder/hiccai-xhs/main/install.sh | bash
 ```
 
 ## 触发方式
