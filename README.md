@@ -2,6 +2,16 @@
 
 小红书爆款内容操盘 Skill，用于生成、改写、审核小红书标题、封面标题、Hook、图文笔记、短视频脚本、话题标签、评论引导、账号选题、账号栏目和发布策略。
 
+## 一键安装（Claude Code）
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/laixi969-coder/hiccai-xhs/main/install.sh | bash
+```
+
+安装完成后重启 Claude Code，输入 `/hiccai-xhs` 即可使用。
+
+---
+
 这个仓库里的核心文件是 [`hiccai-xhs/SKILL.md`](hiccai-xhs/SKILL.md)。它把「小红书网感」拆成可执行流程：先重构选题和用户关系，再设计标题、封面、Hook、正文、收藏点、评论区、搜索关键词和账号策略。
 
 ## 适用场景
@@ -29,42 +39,31 @@
 
 ## 如何安装
 
-#### 通用安装方式
+#### 一键安装（推荐）
 
 ```bash
-npx -y skills add laixi969-coder/hiccai-xhs -g --all
+curl -fsSL https://raw.githubusercontent.com/laixi969-coder/hiccai-xhs/main/install.sh | bash
 ```
 
 #### 手动安装
 
-复制 `hiccai-xhs` 目录到 Codex skills 目录：
-
 ```bash
-cp -R hiccai-xhs ~/.codex/skills/hiccai-xhs
+git clone --depth 1 https://github.com/laixi969-coder/hiccai-xhs /tmp/hiccai-xhs-install
+cp -r /tmp/hiccai-xhs-install/hiccai-xhs ~/.claude/skills/hiccai-xhs
+rm -rf /tmp/hiccai-xhs-install
 ```
-
-#### 从 Release 安装
-
-如果你使用支持上传 skill zip 的工具，可以从 GitHub Releases 下载 `hiccai-xhs-版本号.zip`。zip 解压后根级是 `SKILL.md`。
 
 ## 如何更新
 
-通过 `npx skills add` 安装的用户，重新运行一次同样的命令即可：
+重新运行安装命令即可，会自动覆盖旧版：
 
 ```bash
-npx -y skills add laixi969-coder/hiccai-xhs -g --all
-```
-
-手动安装的用户，重新复制 `hiccai-xhs` 目录即可：
-
-```bash
-rm -rf ~/.codex/skills/hiccai-xhs
-cp -R hiccai-xhs ~/.codex/skills/hiccai-xhs
+curl -fsSL https://raw.githubusercontent.com/laixi969-coder/hiccai-xhs/main/install.sh | bash
 ```
 
 ## 触发方式
 
-安装后，在 Codex 里可以直接用类似提示触发：
+安装后，在 Claude Code 里输入 `/hiccai-xhs` 直接触发，或自然语言描述需求：
 
 ```text
 用 hiccai-xhs 帮我写一篇杭州咖啡馆探店笔记
