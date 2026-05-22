@@ -2,10 +2,18 @@
 
 小红书爆款内容操盘 Skill，用于生成、改写、审核小红书标题、封面标题、Hook、图文笔记、短视频脚本、话题标签、评论引导、账号选题、账号栏目和发布策略。
 
-## 一键安装（Claude Code）
+## 安装（Claude Code）
+
+需要有本仓库访问权限。在终端运行：
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/laixi969-coder/hiccai-xhs/main/install.sh | bash
+bash <(git clone --depth 1 git@github.com:laixi969-coder/hiccai-xhs.git /tmp/hiccai-xhs-install 2>/dev/null && echo "cp -r /tmp/hiccai-xhs-install/hiccai-xhs ~/.claude/skills/hiccai-xhs && rm -rf /tmp/hiccai-xhs-install && echo '✓ 安装完成，重启 Claude Code 后输入 /hiccai-xhs 使用'")
+```
+
+或直接运行 install.sh：
+
+```bash
+git clone git@github.com:laixi969-coder/hiccai-xhs.git /tmp/hiccai-xhs-install && bash /tmp/hiccai-xhs-install/install.sh
 ```
 
 安装完成后重启 Claude Code，输入 `/hiccai-xhs` 即可使用。
@@ -39,18 +47,10 @@ curl -fsSL https://raw.githubusercontent.com/laixi969-coder/hiccai-xhs/main/inst
 
 ## 如何安装
 
-#### 一键安装（推荐）
+需要有本仓库访问权限（SSH 或 HTTPS）。
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/laixi969-coder/hiccai-xhs/main/install.sh | bash
-```
-
-#### 手动安装
-
-```bash
-git clone --depth 1 https://github.com/laixi969-coder/hiccai-xhs /tmp/hiccai-xhs-install
-cp -r /tmp/hiccai-xhs-install/hiccai-xhs ~/.claude/skills/hiccai-xhs
-rm -rf /tmp/hiccai-xhs-install
+git clone git@github.com:laixi969-coder/hiccai-xhs.git /tmp/hiccai-xhs-install && bash /tmp/hiccai-xhs-install/install.sh
 ```
 
 ## 如何更新
@@ -58,7 +58,7 @@ rm -rf /tmp/hiccai-xhs-install
 重新运行安装命令即可，会自动覆盖旧版：
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/laixi969-coder/hiccai-xhs/main/install.sh | bash
+git clone git@github.com:laixi969-coder/hiccai-xhs.git /tmp/hiccai-xhs-install && bash /tmp/hiccai-xhs-install/install.sh
 ```
 
 ## 触发方式
